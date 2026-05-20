@@ -34,4 +34,4 @@ test:
 	NODE_ENV=test npm test -s
 
 ci:
-	docker-compose run --rm app make test
+	docker compose run --rm app make test
