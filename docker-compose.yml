@@ -9,8 +9,6 @@ services:
     command: make test
     pull_policy: build
 
-
-
     environment:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
