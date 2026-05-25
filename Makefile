@@ -1,5 +1,12 @@
-ci:
-	docker compose run --rm app npm install --no-audit --no-fund
+setup:
+	docker compose run --rm app npm install
+
+build:
 	docker compose run --rm app npm run build
-	docker compose run --rm -e CI=true app make test
+
+test:
+	docker compose run --rm -e CI=true app npm test
+
+ci:
+	docker compose run --rm -e CI=true app npm test
 	docker compose build app
