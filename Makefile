@@ -8,5 +8,7 @@ test:
 	docker compose run --rm -e CI=true app npm test
 
 ci:
+	docker compose up -d --build db
 	docker compose run --rm -e CI=true app npm test
-	docker compose build app
+
+

@@ -6,7 +6,9 @@ services:
       context: .
       dockerfile: Dockerfile.production
     working_dir: /app
+    # force a fresh container using the built image when CI runs `docker compose run`
     command: make test
+
     environment:
       DATABASE_NAME: ${DATABASE_NAME}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
