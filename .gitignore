@@ -1,13 +1,5 @@
 node_modules
-npm-debug.log
-yarn-error.log
-
+.git
+.github
 .env
-
-dist
-build
-
 .DS_Store
-
-.npm
-.cache

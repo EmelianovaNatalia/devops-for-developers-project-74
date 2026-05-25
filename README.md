@@ -1,5 +1,5 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/EmelianovaNatalia/devops-for-developers-project-74/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EmelianovaNatalia/devops-for-developers-project-74/actions)CI setup complete
+[![Actions Status](https://github.com/EmelianovaNatalia/devops-for-developers-project-74/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EmelianovaNatalia/devops-for-developers-project-74/actions)
 
 # DevOps for Developers Project 74
 
@@ -21,6 +21,7 @@ make setup
 
 ```bash
 make dev
+Application is available at http://localhost:8080
 ```
 
 ## Run tests
