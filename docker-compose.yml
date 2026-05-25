@@ -6,8 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile.production
     working_dir: /app
-    # force a fresh container using the built image when CI runs `docker compose run`
     command: make test
+    pull_policy: build
+
+
 
     environment:
       DATABASE_NAME: ${DATABASE_NAME}
@@ -21,6 +23,8 @@ services:
 
   db:
     image: postgres:15
+    pull_policy: build
+
     environment:
       POSTGRES_DB: ${DATABASE_NAME}
       POSTGRES_USER: ${DATABASE_USERNAME}
