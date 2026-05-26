@@ -1,15 +1,11 @@
-FROM node:20.12.2
+FROM node:20.12.2 AS test
 
 WORKDIR /app
 
-# Копируем package.json
-COPY package*.json ./
+COPY app/package*.json ./
 
-# Устанавливаем зависимости (включая dev)
 RUN npm install --include=dev
 
-# Копируем весь проект
-COPY . .
+COPY app/ ./
 
-# Команда по умолчанию
-CMD ["npm", "start"]
+CMD ["npm", "test"]

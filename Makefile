@@ -1,6 +1,9 @@
-ci:
-	docker compose build app
-	docker compose run --rm -e CI=true app make test
+.PHONY: ci test clean
 
 test:
-	npm test
+	docker compose -f docker-compose.test.yml up --abort-on-container-exit --exit-code-from app-test
+
+clean:
+	docker compose -f docker-compose.test.yml down -v
+
+ci: test
