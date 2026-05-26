@@ -7,10 +7,12 @@
       "node": ">=20.x"
    },
    "scripts": {
-      "migrate": "./node_modules/.bin/sequelize-cli db:migrate",
+      "migrate": "npx sequelize-cli db:migrate",
+
       "prebuild": "rm -rf dist",
       "build": "webpack",
-      "pretest": "npm run migrate",
+      "pretest": "npx sequelize-cli db:migrate",
+
       "test": "jest --verbose --runInBand",
       "prestart": "npm run migrate",
       "start": "fastify start -a 0.0.0.0 -p 8080 server/plugin.js -l debug -P -o",
