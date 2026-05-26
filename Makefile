@@ -7,7 +7,7 @@ test:
 	cd app && npm test
 
 ci:
-	cd app && cp .env.ci .env && npm test
+	cd app && bash ci-setup.sh
 
 db-migrate:
 	cd app && npm run migrate
