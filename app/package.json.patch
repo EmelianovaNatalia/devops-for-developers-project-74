@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "pretest": "cross-env NODE_ENV=test npm run db:sync",
+    "db:sync": "node -e \"require('./server/models').sequelize.sync({force:true}).then(()=>process.exit())\"",
+    "test": "jest --verbose --runInBand"
+  }
+}
