@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:20.12.2
 
 WORKDIR /app
 
@@ -10,10 +10,8 @@ RUN npm ci
 
 COPY app .
 
-RUN npm run build
-
 EXPOSE 8080
 
 ENV NODE_ENV=production
 
-CMD ["npm", "start"]
+CMD make start
