@@ -1,12 +1,16 @@
 {
   "name": "javascript-fastify-blog",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
+    "migrate": "sequelize-cli db:migrate",
     "pretest": "echo 'Skipping migrations in CI'",
-    "test": "jest --passWithNoTests || echo 'Tests completed'"
+    "test": "jest --passWithNoTests || echo 'Tests completed'",
+    "start": "node server/index.js"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "transform": {}
   },
   "devDependencies": {
     "jest": "^29.7.0"
