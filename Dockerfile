@@ -1,11 +1,13 @@
-FROM node:20.12.2 AS test
+FROM node:20
 
 WORKDIR /app
 
-COPY app/package*.json ./
+COPY app/package.json package.json
+COPY app/package-lock.json package-lock.json
 
-RUN npm install --include=dev
+RUN npm install --legacy-peer-deps
 
-COPY app/ ./
+COPY app/. .
 
-CMD ["npm", "test"]
+EXPOSE 8080
+CMD make dev
